@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlissAcademy.Web", "src\apps\BlissAcademy.Web\BlissAcademy.Web.csproj", "{D717A537-B739-43D2-A3F2-7FEF4EBCB817}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C42DF2B6-8FD2-499D-8EDA-4E7995FD09F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apps", "apps", "{5A0152B1-EFDF-46D5-8BD6-20C840B8B47E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{F5169F27-7318-45D7-9D25-C54BDEF945A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +24,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D717A537-B739-43D2-A3F2-7FEF4EBCB817} = {5A0152B1-EFDF-46D5-8BD6-20C840B8B47E}
+		{5A0152B1-EFDF-46D5-8BD6-20C840B8B47E} = {C42DF2B6-8FD2-499D-8EDA-4E7995FD09F1}
+		{F5169F27-7318-45D7-9D25-C54BDEF945A9} = {C42DF2B6-8FD2-499D-8EDA-4E7995FD09F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00F86A33-D4EE-4E60-B7A0-C5FF3E1D200B}

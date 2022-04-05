@@ -18,34 +18,39 @@
 			<!-- Featured blogpost -->
 			<div class="row section">
 				<div class="col-md-12">
-					@Model.Value("categoryTitle")
+					@Model.Value("categoryBody")
 				</div>
 			</div>
 
 			<!-- Latest blog posts -->
 			<div class="row section">
 				<div class="col-md-12">
-					<h3>Latest products</h3>
-					
-                    @{
-                        var selection = Model
-                        .ChildrenOfType("product")
-                        .Where(x => x.IsVisible())
-                        .OrderByDescending(x => x.CreateDate);
-                    }
-                    <ul>
-                    	@foreach (var item in selection)
-                    	{
-                    		<li>
-                    			<a href="@item.Url()">@item.Name()</a>
-                    		</li>
-                    	}
-                    </ul>
-
+					<h3>Latest @Model.Value("categoryTitle")</h3>
 				</div>
 			</div>
-
-			<!-- Blog Post Query goes here. -->
+			<div class="row">
+		     @{
+                    var selection = Model
+                    .ChildrenOfType("product")
+                    .Where(x => x.IsVisible())
+                    .OrderByDescending(x => x.CreateDate);
+                }
+			 @foreach (var item in selection)
+             {
+                <div class="col-md-4">
+					<a href="@item.Url()" class="featured-link"><div class="thumbnail-blog">
+						<div class="thumbnail-img" style="background-image:url('@(item.Value<IPublishedContent>("productImage").Url())')"></div>
+						<h5>@item.Name()</h5>
+					</div></a>
+				</div>
+			    }
+			</div>
+			<div class="row section">
+				<div class="col-md-12">
+					<h3>Other @Model.Value("categoryTitle")</h3>
+				</div>
+			</div>
+			<!-- Product Query goes here. -->
 			<div class="row">
 				<div class="col-md-4">
 					<a href="Blogpost.html" class="featured-link"><div class="thumbnail-blog">
@@ -63,25 +68,6 @@
 					<a href="#" class="featured-link"><div class="thumbnail-blog">
 						<div class="thumbnail-img" style="background-image:url('/images/heart-DNS.png')"></div>
 						<h5>Product 3</h5>
-					</div></a>
-				</div>
-
-				<div class="col-md-4">
-					<a href="#" class="featured-link"><div class="thumbnail-blog">
-						<div class="thumbnail-img" style="background-image:url('/images/uPackage.png')"></div>
-						<h5>Product 4</h5>
-					</div></a>
-				</div>
-				<div class="col-md-4">
-					<a href="#" class="featured-link"><div class="thumbnail-blog">
-						<div class="thumbnail-img" style="background-image:url('/images/CG-virgins.JPG')"></div>
-						<h5>Product 5</h5>
-					</div></a>
-				</div>
-				<div class="col-md-4">
-					<a href="#" class="featured-link"><div class="thumbnail-blog">
-						<div class="thumbnail-img" style="background-image:url('/images/confetti.jpg')"></div>
-						<h5>Product 6</h5>
 					</div></a>
 				</div>
 			</div>

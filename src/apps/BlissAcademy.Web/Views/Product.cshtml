@@ -2,5 +2,49 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Product>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = null;
+	Layout = "Master.cshtml";
 }
+		<!-- Jumbotron, w title -->
+		<div class="jumbotron text-center jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-1">@Model.Value("productTitle")</h1>
+				<p>And this is <span class="font-weight-bold">only</span> the beginning.</p>
+			</div>
+		</div>
+
+		<!-- Main container -->
+
+		<!-- Product meta data -->
+		<div class="container-fluid grey-bg">
+			<div class="container">
+				<div class="row section">
+					<div class="col-md-6">
+						@Model.Value("articleContent")
+						<br/>
+						@{
+                            var typedMediaPickerSingle = Model.Value<IPublishedContent>("productImage");
+                            if (typedMediaPickerSingle != null)
+                            {
+                                <p>@typedMediaPickerSingle.Name</p>
+                                <img src="@(Model.Value<IPublishedContent>("productImage").Url())" style="width:200px" alt="@typedMediaPickerSingle.Value("alt")" />
+                            }
+                        }
+                        <br/>
+                        <div class="news__button">
+								<input type="hidden" value="@Model.Id" id="productId" />
+                                <input type="submit" value="Add to Wishlist" class="btn btn-add-list" />
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>		
+
+		<!-- Product content -->
+        <div class="container">
+
+			<div class="row section">
+				<div class="col-md-12">
+					@Model.Value("productContent")
+				</div>
+			</div>
+		</div>

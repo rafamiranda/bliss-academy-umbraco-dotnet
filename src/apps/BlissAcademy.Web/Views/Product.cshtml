@@ -1,5 +1,6 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Product>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Product>
+@using BlissAcademy.Core.PublishedContent;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "Master.cshtml";
@@ -19,7 +20,7 @@
 			<div class="container">
 				<div class="row section">
 					<div class="col-md-6">
-						@Model.Value("articleContent")
+						@Model.Value("productContent")
 						<br/>
 						@{
                             var typedMediaPickerSingle = Model.Value<IPublishedContent>("productImage");

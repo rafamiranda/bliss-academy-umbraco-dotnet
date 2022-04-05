@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Development\\Bliss Academy\\Projects\\bliss-academy-umbraco-dotnet\\src\\libs\\BlissAcademy.Core\\BlissAcademy.Core.csproj": {}
+  },
+  "projects": {
+    "C:\\Development\\Bliss Academy\\Projects\\bliss-academy-umbraco-dotnet\\src\\libs\\BlissAcademy.Core\\BlissAcademy.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Development\\Bliss Academy\\Projects\\bliss-academy-umbraco-dotnet\\src\\libs\\BlissAcademy.Core\\BlissAcademy.Core.csproj",
+        "projectName": "BlissAcademy.Core",
+        "projectPath": "C:\\Development\\Bliss Academy\\Projects\\bliss-academy-umbraco-dotnet\\src\\libs\\BlissAcademy.Core\\BlissAcademy.Core.csproj",
+        "packagesPath": "C:\\Users\\rafaelmiranda\\.nuget\\packages\\",
+        "outputPath": "C:\\Development\\Bliss Academy\\Projects\\bliss-academy-umbraco-dotnet\\src\\libs\\BlissAcademy.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\rafaelmiranda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Umbraco.Cms.Web.BackOffice": {
+              "target": "Package",
+              "version": "[9.4.2, )"
+            },
+            "Umbraco.Cms.Web.Website": {
+              "target": "Package",
+              "version": "[9.4.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

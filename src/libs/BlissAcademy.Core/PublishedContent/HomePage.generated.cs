@@ -18,9 +18,29 @@ using Umbraco.Extensions;
 
 namespace BlissAcademy.Core.PublishedContent
 {
+	// Mixin Content Type with alias "homePage"
+	/// <summary>HomePage</summary>
+	public partial interface IHomePage : IPublishedContent
+	{
+		/// <summary>Body Text</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.4.2+93badabcb1e63f93fda0aa7793140b6689efc148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BodyText { get; }
+
+		/// <summary>FooterText</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.4.2+93badabcb1e63f93fda0aa7793140b6689efc148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string FooterText { get; }
+
+		/// <summary>Page Title</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.4.2+93badabcb1e63f93fda0aa7793140b6689efc148")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string PageTitle { get; }
+	}
+
 	/// <summary>HomePage</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel
+	public partial class HomePage : PublishedContentModel, IHomePage
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -55,7 +75,12 @@ namespace BlissAcademy.Core.PublishedContent
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.4.2+93badabcb1e63f93fda0aa7793140b6689efc148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("bodyText")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BodyText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "bodyText");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BodyText => GetBodyText(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Body Text</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.4.2+93badabcb1e63f93fda0aa7793140b6689efc148")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static global::Umbraco.Cms.Core.Strings.IHtmlEncodedString GetBodyText(IHomePage that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(publishedValueFallback, "bodyText");
 
 		///<summary>
 		/// FooterText: Copyright notice for the footer
@@ -63,7 +88,12 @@ namespace BlissAcademy.Core.PublishedContent
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.4.2+93badabcb1e63f93fda0aa7793140b6689efc148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("footerText")]
-		public virtual string FooterText => this.Value<string>(_publishedValueFallback, "footerText");
+		public virtual string FooterText => GetFooterText(this, _publishedValueFallback);
+
+		/// <summary>Static getter for FooterText</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.4.2+93badabcb1e63f93fda0aa7793140b6689efc148")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetFooterText(IHomePage that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "footerText");
 
 		///<summary>
 		/// Page Title: Main title of the page (ex.: Welcome to Bliss Academy)
@@ -71,6 +101,11 @@ namespace BlissAcademy.Core.PublishedContent
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.4.2+93badabcb1e63f93fda0aa7793140b6689efc148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("pageTitle")]
-		public virtual string PageTitle => this.Value<string>(_publishedValueFallback, "pageTitle");
+		public virtual string PageTitle => GetPageTitle(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Page Title</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.4.2+93badabcb1e63f93fda0aa7793140b6689efc148")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetPageTitle(IHomePage that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "pageTitle");
 	}
 }

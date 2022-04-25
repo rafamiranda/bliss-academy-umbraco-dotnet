@@ -4,6 +4,7 @@
 @inherits UmbracoViewPage
 @{
 	Layout = null;
+	var isLoggedIn = Context.User?.Identity?.IsAuthenticated ?? false;
 }
 <!DOCTYPE HTML>
 <html>
@@ -31,8 +32,19 @@
                 
                 @foreach (var item in selection)
                 {
-                    <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name()</a>
+                    if (@isLoggedIn)
+                    {
+                        if(!@item.Url().Contains("registerlog-in"))
+                        {
+                            <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name()</a>
+                        }
+                    }
+                    else
+                    {
+                        <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name()</a>
+                    }
                 }
+                @Html.Partial("LoginStatus")
 			</nav>
 		</div>
 		@RenderBody() 

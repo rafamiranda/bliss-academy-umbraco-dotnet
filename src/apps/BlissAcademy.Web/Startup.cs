@@ -6,6 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
+using BlissAcademy.Core.Database;
+using Microsoft.EntityFrameworkCore;
+using BlissAcademy.Web.Infrastructure.Extensions.Microsoft.Extensions.DependencyInjection;
 
 namespace BlissAcademy.Web
 {
@@ -38,6 +41,7 @@ namespace BlissAcademy.Web
         /// </remarks>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddServiceOptions(_config);
 #pragma warning disable IDE0022 // Use expression body for methods
             services.AddUmbraco(_env, _config)
                 .AddBackOffice()
@@ -45,7 +49,7 @@ namespace BlissAcademy.Web
                 .AddComposers()
                 .Build();
 #pragma warning restore IDE0022 // Use expression body for methods
-
+            services.AddCustomDbContext(_config);
         }
 
         /// <summary>
@@ -72,6 +76,8 @@ namespace BlissAcademy.Web
                     u.UseBackOfficeEndpoints();
                     u.UseWebsiteEndpoints();
                 });
+
+            app.InitializeDb();
         }
     }
 }

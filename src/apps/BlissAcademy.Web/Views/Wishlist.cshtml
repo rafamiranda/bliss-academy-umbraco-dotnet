@@ -1,0 +1,14 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Wishlist>
+@using ContentModels = BlissAcademy.Core.PublishedContent;
+@{
+	Layout = "Master.cshtml";
+}
+
+<!-- Jumbotron, w title -->
+<div class="jumbotron text-center jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-1">@Model.Value("wishlistTitle")</h1>
+        <p>Check your list!</p>
+    </div>
+</div>

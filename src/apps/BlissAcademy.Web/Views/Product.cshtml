@@ -2,6 +2,8 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Product>
 @using BlissAcademy.Core.PublishedContent;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using BlissAcademy.Core.Controllers;
+@using BlissAcademy.Core.Features
 @{
 	Layout = "Master.cshtml";
 }
@@ -31,10 +33,13 @@
                             }
                         }
                         <br/>
-                        <div class="news__button">
-								<input type="hidden" value="@Model.Id" id="productId" />
-                                <input type="submit" value="Add to Wishlist" class="btn btn-add-list" />
+                        @using (Html.BeginUmbracoForm<WishlistProductController>("AddProduct", new AddWishlistProduct.CommandRequest { ProductId = Model.Id, ProductName = Model.Name, ProductQuantity = 1} ))
+                        {
+							<input type="hidden" value="@Model.Id" id="productId" />
+                            <input type="submit" value="Add to Wishlist" class="btn btn-add-list" />
+                        }
                         </div>
+                        
 					</div>
 				</div>
 			</div>

@@ -9,6 +9,8 @@ using Umbraco.Extensions;
 using BlissAcademy.Core.Database;
 using Microsoft.EntityFrameworkCore;
 using BlissAcademy.Web.Infrastructure.Extensions.Microsoft.Extensions.DependencyInjection;
+using Autofac;
+using BlissAcademy.Web.Infrastructure.Autofac;
 
 namespace BlissAcademy.Web
 {
@@ -50,6 +52,11 @@ namespace BlissAcademy.Web
                 .Build();
 #pragma warning restore IDE0022 // Use expression body for methods
             services.AddCustomDbContext(_config);
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule<BlissAcademyModule>();
         }
 
         /// <summary>

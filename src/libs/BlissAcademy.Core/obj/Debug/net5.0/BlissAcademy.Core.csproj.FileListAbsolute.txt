@@ -282,7 +282,6 @@ C:\Development\Bliss Academy\Projects\bliss-academy-umbraco-dotnet\src\libs\Blis
 C:\Development\Bliss Academy\Projects\bliss-academy-umbraco-dotnet\src\libs\BlissAcademy.Core\obj\Debug\net5.0\BlissAcademy.Core.dll
 C:\Development\Bliss Academy\Projects\bliss-academy-umbraco-dotnet\src\libs\BlissAcademy.Core\obj\Debug\net5.0\ref\BlissAcademy.Core.dll
 C:\Development\Bliss Academy\Projects\bliss-academy-umbraco-dotnet\src\libs\BlissAcademy.Core\obj\Debug\net5.0\BlissAcademy.Core.pdb
-C:\Development\Bliss Academy\Projects\bliss-academy-umbraco-dotnet\src\libs\BlissAcademy.Core\obj\Debug\net5.0\BlissAcademy.Core.csproj.AssemblyReference.cache
 C:\Development\Bliss Academy\Projects\bliss-academy-umbraco-dotnet\src\libs\BlissAcademy.Core\bin\Debug\net5.0\BlissAcademy.Core.runtimeconfig.json
 C:\Development\Bliss Academy\Projects\bliss-academy-umbraco-dotnet\src\libs\BlissAcademy.Core\bin\Debug\net5.0\BlissAcademy.Core.runtimeconfig.dev.json
 C:\Development\Bliss Academy\Projects\bliss-academy-umbraco-dotnet\src\libs\BlissAcademy.Core\obj\Debug\net5.0\BlissAcademy.Core.genruntimeconfig.cache

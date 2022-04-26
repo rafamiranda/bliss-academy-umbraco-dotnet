@@ -32,7 +32,7 @@
                                 <img src="@(Model.Value<IPublishedContent>("productImage").Url())" style="width:200px" alt="@typedMediaPickerSingle.Value("alt")" />
                             }
                         }
-                        <br/>
+                        <br/><br/>
                         @using (Html.BeginUmbracoForm<WishlistProductController>("AddProduct", new AddWishlistProduct.CommandRequest { ProductId = Model.Id, ProductName = Model.Name, ProductQuantity = 1} ))
                         {
 							<input type="hidden" value="@Model.Id" id="productId" />

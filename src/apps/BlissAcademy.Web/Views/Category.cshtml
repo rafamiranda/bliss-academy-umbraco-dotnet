@@ -2,6 +2,8 @@
 @using BlissAcademy.Core.PublishedContent;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Category>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using BlissAcademy.Core.Features;
+@using BlissAcademy.Core.Controllers;
 @{
 	Layout = "Master.cshtml";
 }
@@ -43,6 +45,11 @@
 						<div class="thumbnail-img" style="background-image:url('@(item.Value<IPublishedContent>("productImage").Url())')"></div>
 						<h5>@item.Name()</h5>
 					</div></a>
+				@using (Html.BeginUmbracoForm<WishlistProductController>("AddProduct", new AddWishlistProduct.CommandRequest { ProductId = item.Id, ProductName = item.Name, ProductQuantity = 1} ))
+                {
+                    <input type="submit" value=" + " class="btn btn-add"  alt="Add to Wishlist" />
+                }
+                <br/>
 				</div>
 			    }
 			</div>
